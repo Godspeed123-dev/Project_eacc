@@ -105,7 +105,7 @@ function initCoinGeckoStats() {
   const volumeEl = document.getElementById("coingecko-volume-24h");
   if (!priceEl) return;
 
-  fetch("/api/price")
+  fetch("https://api.coingecko.com/api/v3/simple/price?ids=effective-accelerationism&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true")
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
